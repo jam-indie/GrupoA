@@ -4,6 +4,7 @@ using System.Collections;
 public class MovePlayer : MonoBehaviour 
 {	
 	private Transform transf;
+	public string scene;
 
 
 	// Use this for initialization
@@ -38,5 +39,28 @@ public class MovePlayer : MonoBehaviour
 		}
 	
 	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		// Colisao por tag com os colisores adicionais dos " enemies" para somar pontos a mais.
+		switch(other.gameObject.tag)
+		{
+		case "NaoBateu":
+
+			ManagerGame.score += 50;
+			//gametime += 20f;
+			
+			break;
+			
+		case "Bateu" :
+			
+			Application.LoadLevel(scene);
+			
+			break;
+			
+		}
+		
+	}
+
 }	
 	
