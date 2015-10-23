@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MovePlayer : MonoBehaviour 
 {	
-	private Transform transf;
+	private static Transform transf;
 	public string scene;
 
 

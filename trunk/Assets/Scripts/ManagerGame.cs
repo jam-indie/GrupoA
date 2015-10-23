@@ -7,8 +7,7 @@ public class ManagerGame : MonoBehaviour
 	public static float score;
 	public static float timeoff; // tempo para acrescentar pontos no score
 	//public static float gametime;
-	public static string scene;
-
+	public string scene;
 	public Text ScoreText; 
 	//public Text GameTimeText;
 
@@ -33,5 +32,15 @@ public class ManagerGame : MonoBehaviour
 
 	}
 
-
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		switch(other.gameObject.tag)
+		{
+		case "Play":
+			
+			Application.LoadLevel(scene);
+			
+			break;
+		}
 	}
+}
